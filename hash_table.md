@@ -129,7 +129,7 @@ Here is the full program
 	 {
 		 hash += hash * i + name[i] % TABLE_SIZE;
 	 }
-	 return (hash % 10) + 1;
+	 return (hash % TABLE_SIZE);
  }
 
  // function to insert data to the hash table
@@ -152,7 +152,7 @@ Here is the full program
  person *hash_table_lookup(char *name)
  {
 	 index = hash(name);
-	 if (HASH_TABLE[index] != NULL && strcmp(HASH_TABLE[index], name, MAX_SIZE)==0)
+	 if (HASH_TABLE[index] != NULL && strcmp(HASH_TABLE[index]->name, name, MAX_SIZE)==0)
 	 {
 		 printf("%s found at index %d", name, index);
 		 return HASH_TABLE[index];
@@ -170,11 +170,11 @@ Here is the full program
 	 {
 		 person *tmp = HASH_TABLE[index];
 		 HASH_TABLE[index] = NULL;
-		 printf("deleted %%s at index: %d", tmp->name, index);
-		 return tmp
+		 printf("deleted %s at index: %d", tmp->name, index);
+		 return true;
 	 }
-	 printf("Error\n";)
-	 return false
+	 printf("Error %s not found \n", name;)
+	 return false;
  }
 // function to print 
 void hash_table_print()
@@ -185,7 +185,7 @@ void hash_table_print()
 		{
 			printf("\t%d\t%s\n", i, HASH_TABLE[i]->name);
 		}
-		printf("\t%d\t----\n", i)
+		printf("\t%d\t----\n", i);
 	}
 }
 
