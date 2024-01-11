@@ -123,7 +123,7 @@ Here is the full program
  // A hash function to insert value to hash table index
  unsigned int hash(name)
  {
-	 unsigned int hash = 0
+	 unsigned int hash = 0;
 	 int length = strnlen(name)
 	 for (int i = 0; i < length; i++)
 	 {
@@ -151,7 +151,7 @@ Here is the full program
  // function to lookup
  person *hash_table_lookup(char *name)
  {
-	 index = hash(name);
+	 int index = hash(name);
 	 if (HASH_TABLE[index] != NULL && strcmp(HASH_TABLE[index]->name, name, MAX_SIZE)==0)
 	 {
 		 printf("%s found at index %d", name, index);
@@ -173,7 +173,7 @@ Here is the full program
 		 printf("deleted %s at index: %d", tmp->name, index);
 		 return true;
 	 }
-	 printf("Error %s not found \n", name;)
+	 printf("Error %s not found \n", name);
 	 return false;
  }
 // function to print 
