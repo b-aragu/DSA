@@ -1,11 +1,13 @@
-[]: # json_encoder_decoder.md
+# json_encoder_decoder.md
+
+---
 
 - javascript object notation is a lightweight data format used for data exchange 
 #### Encoding `json` (serialization)
 
 - use `json.dumps`
 
-```run-python
+```python
 import json
 print(json.dumps([1, 2, 3, {'4': 5, '6': 7}], indent=4 ))
 ```
@@ -13,7 +15,7 @@ print(json.dumps([1, 2, 3, {'4': 5, '6': 7}], indent=4 ))
 -  Write custom encoding function for classes 
 #### Decoding __`json`__ 
 - use `json.loads`
-```run-python
+```python
 import json
 person = {
 "name": "Baragu",
@@ -29,7 +31,7 @@ print(json.loads(personjson))
 print(type(json.loads(personjson)))
 ```
 
-```run-python
+```python
 import json
 from json import JSONEncoder
 class user:
